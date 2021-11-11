@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>VUE</title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/estilos.css" />
+        <script src="../js/vue.js"></script>
+    </head>
+    <body>
+        <header class="bg-success text-center text-white">
+            <span class="h2"> FILTROS VUE</span>
+        </header>
+        <section class="container text-center" id="cont">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <p>---------------------------------------------------------</p>
+                    <ul class="list-unstyled text-center">
+                        <li v-for="juego in mejoresJuegos">
+                            {{juego.titulo}}
+                            <!---Imprimir el arreglo de datos-->
+                        </li>
+                    </ul>
+                   <input type="range" min="0" max="10" v-model="minimo"><br>
+                   <p>---------------------------------------------------------</p>
+                   <input type="search" v-model="busqueda" placeholder="buscar juego">
+                   <ul class="list-unstyled text-center">
+                        <li v-for="juego in buscarJuego">
+                            {{juego.titulo}}
+                            <!---Imprimir el arreglo de datos-->
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled text-center">
+                        <li v-for="juego in buscarJuego">
+                            {{juego.titulo | Alreves}}
+                            <!---Imprimir el arreglo de datos-->
+                        </li>
+                    </ul>
+                    <p>---------------------------------------------------------</p>
+                    <h3>coincidencias: {{juegosencontrados}}</h3>                   
+                   
+                   
+                </div>
+            </div>
+            
+            <hr/>
+            
+            
+            
+        </section>
+        <footer class="bg-dark text-center text-white">
+            <span class="h2">@</span>
+        </footer>
+        <script src="../js/funciones.js"></script>
+    </body>
+</html>
